@@ -1,0 +1,17 @@
+sudo: required
+dist: trusty
+language: python
+python:
+  - "2.7"
+before_install:
+    - sudo apt-get install -qq python-numpy python-scipy
+install:
+  - pip install tensorflow
+  - pip install keras
+  - pip install tqdm
+  - pip install matplotlib
+  - pip install stl
+  - pip install trimesh
+  - pip install scikit-image
+script:
+  - "python src/train.py"
